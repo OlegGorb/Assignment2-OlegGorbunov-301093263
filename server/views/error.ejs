@@ -1,0 +1,17 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/mainNav.ejs %>
+
+
+
+<div class="jumbotron" style="background-color: #8F9398; padding-top: 0px; padding-bottom: 10px; border-top-left-radius: 0px; border-top-right-radius: 0px;">
+    <div class="jumbotron" style="padding-top: 32px; padding-bottom: 32px; background-color: #62676C; border-top-left-radius: 0px; border-top-right-radius: 0px; ">
+        <h1 style="color: #FFFFFF;"><%= message %></h1>
+        <h2 style="color: #FFFFFF;"><%= error.status %></h2>
+        <pre style="color: #FFFFFF;"><%= error.stack %></pre>   
+    </div>
+  </div>
+
+<%- include partials/bottomNav.ejs %>
+
+<%- include partials/footer.ejs %>

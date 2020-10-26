@@ -1,0 +1,92 @@
+<%- include partials/header.ejs %> 
+
+<%- include partials/mainNav.ejs %>
+
+  <!-- Main Content -->
+  <div class="jumbotron" style="background-color: #8F9398; padding-top: 0px; padding-bottom: 10px; border-top-left-radius: 0px; border-top-right-radius: 0px;">
+
+    <div class="jumbotron" style="padding-top: 32px; padding-bottom: 32px; background-color: #62676C; border-top-left-radius: 0px; border-top-right-radius: 0px;">
+      <h1 class="display-2" style="text-align: center; color: #60B0F4;"> 
+        <% if (title == "Home") { %>
+          My Mission
+        <% } else if (title == "About") { %>
+          About Me
+        <% } else if (title == "Projects") { %>
+          I would like to work on
+        <% } else if (title == "Services") { %>
+          What I can offer
+        <% } else if (title == "Component List") { %>
+          DataBase List
+        <% } %>
+      </h1>
+    </div>
+
+    <hr style="border-top: 10px dotted #62676C; width: 7%;">
+
+    <div class="jumbotron" style="padding-top: 32px; padding-bottom: 32px; background-color: #62676C;">
+      <h1 class="display-4" style="text-align: center; color: #FFFFFF; font-size: 40px;">
+        <% if (title == "Home") { %>
+          My mission is to deliver professional, reliable, user-friendly software products.
+        <% } else if (title == "About") { %>
+          <img src="assets/images/myPhoto.png" alt="my photo" style="width: 30%;">
+          <br>
+          Name: Oleg Gorbunov
+          <br>
+          Student: Centennial College
+          <br>
+          Major: Software Engineering Technology
+          <br>
+          Resume: Currently Unvailable
+        </h1>
+        <% } else if (title == "Projects") { %>
+          Carmanufacturer websites
+          <br>
+          <img src="assets/images/carMan.png" alt="my photo" style="width: 50%; padding-top: 20px; padding-bottom: 40px;">
+          <br>
+          Mobile aplication
+          <br>
+          <img src="assets/images/mobDev.png" alt="my photo" style="width: 50%; padding-top: 20px; padding-bottom: 40px;">
+          <br>
+          Artificial Intelegence
+          <br>
+          <img src="assets/images/AI.jpg" alt="my photo" style="width: 50%; padding-top: 20px; padding-bottom: 40px;">
+        </h1>
+          <% } else if (title == "Services") { %>
+          <i class="fas fa-desktop"></i> Develop desctop application <i class="fas fa-desktop"></i>
+          <br>
+          <br>
+          <i class="fas fa-globe"></i> Develop website <i class="fas fa-globe"></i>
+          <br>
+          <br>
+          <i class="fas fa-mobile-alt"></i> Develop mobile application <i class="fas fa-mobile-alt"></i>
+        </h1>
+        <% } else if (title == "Component List") { %>
+          <table class="table table-borderless table-striped table-hover table-sm">
+            <thead>
+              <tr class="thead-dark">
+                <th><h1 class="display-4" style="text-align: center; color: #FFFFFF; font-size: 40px;">partID</th>
+                <th><h1 class="display-4" style="text-align: center; color: #FFFFFF; font-size: 40px;">name</th>
+                <th><h1 class="display-4" style="text-align: center; color: #FFFFFF; font-size: 40px;">price</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% for(let count =0; count < components.length; count++) { %>
+              <tr>
+                <td><%= components[count].partID %></td>
+                <td ><%= components[count].name %></td>
+                <td><%= components[count].price %></td>
+              </tr>
+            <% } %>
+            </tbody>
+          </table>
+        <% } %>
+      </h1>
+    </div>
+    
+
+  </div>
+
+<%- include partials/bottomNav.ejs %>
+
+<%- include partials/footer.ejs %>
+
